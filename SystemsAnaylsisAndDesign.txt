@@ -1,0 +1,1 @@
+Chapter 1=SDLC 4 phases,SDLC,UML features,Project sponsor,Disadvantages of waterfall,Workflows for the enhanced unified process,Systems analyst,Object centric software development,SCRUM development methodology,Goal of a systems analyst
