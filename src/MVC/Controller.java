@@ -1,24 +1,23 @@
 package MVC;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 public class Controller {
     //CONTROLLER CLASS
 
     protected ArrayList<File> courses = new ArrayList<>();
+    protected ArrayList<Course> courseList = new ArrayList<>();
     protected Display display;
-    protected System system;
+    protected Course course;
     protected Scanner userInput = new Scanner(System.in);
 
-    public Controller(System system, Display display) {
+    public Controller(Course course, Display display) {
         this.display = display;
-        this.system = system;
+        this.course = course;
     }
 
     // FILE SETUP======================================================================================
@@ -33,17 +32,23 @@ public class Controller {
                     addFile(file);
                 }
             }
-        } else {
-            System.out.println("The specified path is not a directory or doesn't exist.");
         }
     }
 
+    public void generateTopics() throws FileNotFoundException {
+        test();
+        System.out.println("Good morning!\nThese are the topics you will be handling today");
+        String key = course.getChapter();
+        System.out.println("\n"+key+"\n--------------------------------------");
+        LinkedHashSet<String> topics = course.randomTopics(course.topics.get(key),3);
+        for (String i: topics){
+            System.out.println(i);
+        }
+    }
 
-
-
-
-
-
+    private void test() throws FileNotFoundException {
+        course.setUpCourse(courses.get(0));
+    }
 
 
 

@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33266b3c-6fdb-42bb-a276-990ef0dd378b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomRevise.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SystemsAnaylsisAndDesign.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVC/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVC/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVC/System.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testCourse.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemsAnaylsisAndDesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CourseDirectory/SystemsAnaylsisAndDesign.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/System.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCourse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CourseDirectory/testCourse.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/User/Documents/CODE/JAVA",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bryanramoz/Documents/Coding/JAVA/RandomRevise&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CourseDirectory" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
