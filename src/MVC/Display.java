@@ -6,10 +6,11 @@ import java.util.Set;
 
 public class Display {
     // VIEW CLASS
+    private String version = "0.4";
 
 
     public void RandomReviveIntro() {
-        System.out.println("Welcome to RandomRevive!\n\nDeveloped by Brian Ramos Cazares\nVersion 0.3");
+        System.out.println("Welcome to RandomRevive!\n\nDeveloped by Brian Ramos Cazares\nVersion "+ version);
         printSeperator();
     }
 
@@ -18,7 +19,13 @@ public class Display {
     }
 
     public void mainMenu(){
-        System.out.println("[1] View the main courses in your directory.");
+        System.out.println("Main Menu: ");
+        System.out.println("-------------------------------------");
+        System.out.println("[next]   Select Course and Generate (single course).");
+        System.out.println("[view]   View available courses in your directory.");
+        System.out.println("[random] Generate Study Guide (all courses).");
+        System.out.println("[menu]   Print main menu.");
+        System.out.println("[quit]   Exit program.");
     }
 
     public void invalidInput(){

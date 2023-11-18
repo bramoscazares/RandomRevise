@@ -56,11 +56,19 @@ public class Course {
 
     }
     public String getChapter() {
+        //This grabs a random Chapter from this course.
+
         ArrayList<String> keys = new ArrayList<>(topics.keySet());
         return keys.get(random.nextInt(keys.size()));
     }
 
     public LinkedHashSet<String> randomTopics(ArrayList<String> strings, int amount) {
+        //This will return a list of items
+
+        if (amount >= strings.size()){
+            amount = strings.size();
+        }
+
         LinkedHashSet<String> topics = new LinkedHashSet<>();
         while(topics.size() < amount){
             topics.add(strings.get(random.nextInt(strings.size())));

@@ -25,7 +25,7 @@ public class Controller {
     public void start(){
         display.RandomReviveIntro();
 
-
+        display.mainMenu();
         while (continueApp){
             display.inputPropmt();
             String input = userInput.nextLine();
@@ -44,6 +44,7 @@ public class Controller {
     public void addDirectory(File folder) throws FileNotFoundException {
         if (folder.exists() && folder.isDirectory()) {
             File[] files = folder.listFiles();
+
 
             if (files != null) {
                 for (File file : files) {
@@ -65,31 +66,51 @@ public class Controller {
 
     //CONTROLLER METHODS ======================================================================================
     public void processCommand(String input){
+        //This method processes user input and takes it to the corresponding command
+
+
         if (input.equals("quit")){
             continueApp = false;
-        } else if(input.equals("all")){
+        } else if(input.equals("next")|| input.isEmpty()){
+            //User selects a course and how many random chapters to generate
+
+        } else if(input.equals("view")){
             display.printDirectory(courseList);
-        }else {
+        } else if(input.equals("random")){
+            //User gets a full random study guide of all courses in directory
+            //Prompt user for amount
+
+            fullStudyGuide(getInt());
+        } else if(input.equals("menu")){
+            display.mainMenu();
+        } else {
             display.invalidInput();
         }
 
 
     }
 
+    private void fullStudyGuide(int anInt) {
+    }
 
-    public void generateTopics() throws FileNotFoundException {
-        test();
-        System.out.println("Good morning!\nThese are the topics you will be handling today");
+    private int getInt() {
+        return 0;
+    }
+
+
+    public void generateTopics(int amount) throws FileNotFoundException {
         String key = course.getChapter();
         System.out.println("\n"+key+"\n--------------------------------------");
-        LinkedHashSet<String> topics = course.randomTopics(course.topics.get(key),3);
+        LinkedHashSet<String> topics = course.randomTopics(course.topics.get(key),amount);
+
+
         for (String i: topics){
             System.out.println(i);
         }
     }
 
     private void test() throws FileNotFoundException {
-        course.setUpCourse(courses.get(0));
+        //Method to test Stuff
     }
 
 
