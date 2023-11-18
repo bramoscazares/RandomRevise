@@ -33,8 +33,7 @@ public class Display {
     }
 
     public void printCouseInfo(Course course){
-        System.out.println(""+course.getCourseName());
-        System.out.println("<><><><><><><><><><><><><><><><><><><><><><><><><><><>");
+        printCouseHeader(course);
         for(String key : course.getChapters()){
             System.out.println("    <> "+ key + ": ");
             ArrayList<String> topics = course.getChapterContents(key);
@@ -44,6 +43,12 @@ public class Display {
             System.out.println();
         }
     }
+
+    public void printCouseHeader(Course course) {
+        System.out.println("\n" + course.getCourseName());
+        System.out.println("<><><><><><><><><><><><><><><><><><><><><><><><><><><>");
+    }
+
     public void printSeperator(){ System.out.println("------------------------------------------------------------");}
 
 

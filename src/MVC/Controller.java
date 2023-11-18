@@ -22,7 +22,7 @@ public class Controller {
     }
 
     //APP START ======================================================================================
-    public void start(){
+    public void start() throws FileNotFoundException {
         display.RandomReviveIntro();
 
         display.mainMenu();
@@ -65,7 +65,7 @@ public class Controller {
     }
 
     //CONTROLLER METHODS ======================================================================================
-    public void processCommand(String input){
+    public void processCommand(String input) throws FileNotFoundException {
         //This method processes user input and takes it to the corresponding command
 
 
@@ -79,26 +79,35 @@ public class Controller {
         } else if(input.equals("random")){
             //User gets a full random study guide of all courses in directory
             //Prompt user for amount
-
             fullStudyGuide(getInt());
         } else if(input.equals("menu")){
             display.mainMenu();
         } else {
             display.invalidInput();
         }
-
-
     }
 
-    private void fullStudyGuide(int anInt) {
+    private void fullStudyGuide(int anInt) throws FileNotFoundException {
+        for(Course c : courseList){
+            generateTopics(c,anInt);
+        }
     }
 
     private int getInt() {
-        return 0;
+        System.out.println("Enter an integer amount: ");
+        while (true){
+            try {
+                int anInt = Integer.parseInt(userInput.nextLine());
+                return anInt;
+            } catch (Exception e){
+                display.invalidInput();
+            }
+        }
     }
 
 
-    public void generateTopics(int amount) throws FileNotFoundException {
+    public void generateTopics(Course course, int amount) throws FileNotFoundException {
+        display.printCouseHeader(course);
         String key = course.getChapter();
         System.out.println("\n"+key+"\n--------------------------------------");
         LinkedHashSet<String> topics = course.randomTopics(course.topics.get(key),amount);
