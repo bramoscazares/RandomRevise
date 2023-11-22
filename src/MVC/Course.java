@@ -65,7 +65,7 @@ public class Course {
     public LinkedHashSet<String> randomTopics(ArrayList<String> strings, int amount) {
         //This will return a list of items
 
-        if (amount >= strings.size()){
+        if (amount > strings.size()){
             amount = strings.size();
         }
 

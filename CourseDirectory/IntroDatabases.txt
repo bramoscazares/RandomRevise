@@ -1,2 +1,2 @@
 Intro to Databases
-Quizlet Chapters for Final Exam=Data Modeling=Normalization=SQL
+Quizlet Chapters for Final Exam=Data Modeling,Normalization,SQL

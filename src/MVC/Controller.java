@@ -70,15 +70,18 @@ public class Controller {
 
 
         if (input.equals("quit")){
-            continueApp = false;
+            quit();
         } else if(input.equals("next")|| input.isEmpty()){
             //User selects a course and how many random chapters to generate
 
+            selectCourse();
         } else if(input.equals("view")){
+
             display.printDirectory(courseList);
         } else if(input.equals("random")){
             //User gets a full random study guide of all courses in directory
             //Prompt user for amount
+
             fullStudyGuide(getInt());
         } else if(input.equals("menu")){
             display.mainMenu();
@@ -87,10 +90,34 @@ public class Controller {
         }
     }
 
+    private void quit() {
+        this.continueApp = false;
+    }
+
+    private void selectCourse() throws FileNotFoundException {
+        display.selectCourse(courseList);
+        int courseInt;
+
+        do {
+            while (!userInput.hasNextLine()) {
+                display.invalidInput();
+                userInput.next(); // Consume the invalid input
+            }
+            courseInt = Integer.parseInt(userInput.nextLine());
+        } while (courseInt < 0 || courseInt >= courseList.size());
+
+        setCourse(courseList.get(courseInt));
+        display.selectedCourse(this.course);
+
+        generateTopics(this.course,getInt());
+        quit();
+    }
+
     private void fullStudyGuide(int anInt) throws FileNotFoundException {
         for(Course c : courseList){
             generateTopics(c,anInt);
         }
+        quit();
     }
 
     private int getInt() {
@@ -109,13 +136,8 @@ public class Controller {
     public void generateTopics(Course course, int amount) throws FileNotFoundException {
         display.printCouseHeader(course);
         String key = course.getChapter();
-        System.out.println("\n"+key+"\n--------------------------------------");
         LinkedHashSet<String> topics = course.randomTopics(course.topics.get(key),amount);
-
-
-        for (String i: topics){
-            System.out.println(i);
-        }
+        display.printGeneratedGuide(key,topics);
     }
 
     private void test() throws FileNotFoundException {

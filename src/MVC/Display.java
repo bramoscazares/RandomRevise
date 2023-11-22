@@ -2,11 +2,12 @@ package MVC;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Display {
     // VIEW CLASS
-    private String version = "0.4";
+    private String version = "0.5";
 
 
     public void RandomReviveIntro() {
@@ -44,6 +45,15 @@ public class Display {
         }
     }
 
+
+    public void printGeneratedGuide(String key, LinkedHashSet<String> topics) {
+        System.out.println("    <> "+ key + ": ");
+        for (String topic : topics){
+            System.out.println("    |    " + topic);
+        }
+
+    }
+
     public void printCouseHeader(Course course) {
         System.out.println("\n" + course.getCourseName());
         System.out.println("<><><><><><><><><><><><><><><><><><><><><><><><><><><>");
@@ -59,6 +69,26 @@ public class Display {
         for(Course i: courseList){
             printCouseInfo(i);
         }
+
+    }
+
+    public void selectCourse(ArrayList<Course> courseList) {
+        printSeperator();
+        System.out.println("Select a course:");
+//        for(Course c : courseList){
+//            System.out.println(c.getCourseName());
+//        }
+
+        for(int i = 0; i < courseList.size();i++){
+            System.out.println("[" + i + "] " + courseList.get(i).getCourseName());
+        }
+        System.out.println();
+
+    }
+
+    public void selectedCourse(Course course) {
+        System.out.println("\nYou have selected the ["+ course.getCourseName() + "] course.");
+        printSeperator();
 
     }
 }
